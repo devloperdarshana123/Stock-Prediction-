@@ -7,7 +7,7 @@ function Footer() {
       <hr />
       <div className='container'>
         <p className='text-center text-light'>© 2025 Stock Prediction Portal. All rights reserved.</p>
-        <p className='text-center text-light'>Developed by Darshna Mehra</p>
+        <p className='text-center text-light'>Developed by Darshana Mehra</p>
         </div>
     </footer>
     </>
