@@ -3,9 +3,20 @@ from .serializers import UserSerializer
 from rest_framework import generics
 from django.contrib.auth.models import User
 from rest_framework.permissions import AllowAny
-
+from rest_framework.views import APIView
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
 
 class RegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
-    Permission_classes = [AllowAny]  # Allow any user to register
+    permission_classes = [AllowAny]  # Corrected here
+
+class ProtectedView(APIView):
+    permission_classes = [IsAuthenticated]  # Corrected here
+
+    def get(self, request):
+        response = {
+            'status': 'Request was successful',
+        }
+        return Response(response, status=200)
