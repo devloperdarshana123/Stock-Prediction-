@@ -19,6 +19,8 @@ function Header() {
         <div>
           {isLoggedIn ? (
             <>
+            <Button text = 'Dashboard' className='btn- outline-info' url = "/dashboard" />
+             &nbsp;
             <button className='btn btn-danger' onClick={handleLogout}> Logout</button>
             </>
           ) : (
